@@ -1,2 +1,2 @@
-# viral-texts-layout
+# Viral Texts Layout
 These scripts help analyze aspects of reprint layout on the newspaper page, such as how reprinted content is distributed across pages (in the corpus or in individual newspapers, time spans, etc.) and where on the pages reprinted material tends to appear. This code aims to remap what we are learning about reprinted material back onto the physical newspaper page, helping illuminate book historical questions and the evolution of the newspaper form over time.
