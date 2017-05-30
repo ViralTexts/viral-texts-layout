@@ -1,4 +1,5 @@
-
+library(tidyverse)
+library(viridis)
 
 # reading in a single file for working with page start coordinates rather than quadrants
 clusters_c <- read_csv("./data/part-00000-f986c8c6-0ffa-4eec-b2ae-778e956cd85f.csv") [ , c("cluster", "text", "date", "title", "placeOfPublication", "seq", "pageWidth", "pageHeight", "firstx", "firsty", "firstw", "firsth", "pageLeft", "pageUpper", "corpus")] %>%
@@ -13,13 +14,11 @@ clusters_c <- read_csv("./data/part-00000-f986c8c6-0ffa-4eec-b2ae-778e956cd85f.c
 # mutate(pageX = firstx / pageWidth) %>%
 # mutate(pageY = firsty / pageHeight)
 
-
 ggplot(clusters_c %>% filter(pageNumber < 5)) +
   geom_point(mapping = aes(x = firstx, y = desc(firsty))) + facet_grid(. ~ pageNumber)
 
 ggplot(clusters_c %>% filter(pageNumber == 1)) +
   geom_point(mapping = aes(x = firstx, y = desc(firsty))) + facet_grid(. ~ decade)
-
 
 
 # reading in a set of files for working with page start coordinates rather than quadrants
@@ -87,7 +86,6 @@ ggplot(clusters_c %>% filter(meanX <= 1 & meanY <=1), aes(meanX, desc(meanY))) +
   theme(panel.background = element_rect(fill = "white")) +
   theme(panel.grid.major = element_line(color = "#efefef")) +
   theme(axis.ticks = element_line(color = "#efefef"))
-
 
 # Select on particular titles
 
